@@ -1,0 +1,22 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "name": "Brands Store",
+            "url": "https://brandsstore.store",
+            "image": ""
+        },
+        {
+            "id": 2,
+            "name": "Bloggy",
+            "url": "https://pacific-shore-33607.herokuapp.com",
+            "image": ""
+        },
+        {
+            "id": 3,
+            "name": "Fashion Station",
+            "url": "https://arcane-hollows-23124.herokuapp.com",
+            "image": ""
+        }  
+    ]
+}

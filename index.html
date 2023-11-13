@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500&display=swap" rel="stylesheet">
+    </head>
+   
+    <body> 
+        <div class="jumbotron text-center">
+            <h1>Hi, I'm Salma</h1>
+            <h3>Web Developer</h3>
+        </div>
+        <section id="ProjectsSection" class="mt-3 p-3">
+            <h3>My Projects </h3>
+            <br/>
+            <div class="projects" id='projects'>
+                <div class='wrapper'>
+                    <div class="card slide-in">
+                        <img src="./assets/images/super-chef.png" alt="">
+                        <div class='body'>
+                            <p>Super Chef is a recipes website that allows users to publish recipes from their accounts</p>
+                            <p><strong>Technical stack:</strong>
+                                 HTML, CSS, ReactJS, NextJS, Nodejs, ExpressJS, MongoDB</p>
+                        </div>
+                        <a target="_blank" href='https://super-chef.vercel.app/'>have a look</a>
+
+                    </div>
+                
+
+                    <div class="card slide-in">
+                        <img src="./assets/images/yourhome.png" alt="">
+                        <div class='body'>
+                            <p>This project belongs to Real Estates Company in Istanbul. The website shows different projects along with plans and prices and company services and blog</p>
+                            <p><strong>Technical stack:</strong>
+                                HTML, CSS, ReactJS, Nodejs, ExpressJS, MongoDB</p>
+                        </div>
+                        <a target="_blank" href='https://yourhomeistanbul.com/'>have a look</a>
+                    </div>
+
+                    <div class="card slide-in">
+                        <img src="./assets/images/brands-store.png" alt="">
+                        <div class='body'>
+                            <p>Brands Store is an e-commerce web app</p>
+                            <p><strong>Technical stack:</strong>
+                                HTML, CSS, ReactJS, Nodejs, ExpressJS, MongoDB</p>
+                        </div>
+                        <a target="_blank" href='https://stark-forest-12561.herokuapp.com'>have a look</a>
+                    </div>
+                    <button id='prev' type='button'>&lt;&lt;</button>
+                    <button id='next' type='button'>>></button>
+                </div>
+                    
+                    
+                
+            </div>
+        </section>
+        <hr>
+        <section id='experience'>
+            <h3>Work Experience</h3>
+            <div class="wrapper">
+               <div class="item">
+                   <h5>Fullstack Web developer</h5>
+                   <p>Oct. 2020 - March 2021</p>
+                   <p><b>company:</b> Alphatech</p>
+                   <p>I worked as a fullstack developer to deliver web applications and backends for mobile applications</p>
+                   <small>* references are available on demand</small>
+               </div>
+            </div>
+        </section>
+        <hr>
+        <section id='eduction'>
+            <h3>Eduction</h3>
+            <div class="wrapper">
+                <h5>Bachelor's in Computer Science</h5>
+                <p>Sep. 2015 - Jul. 2019</p>
+                <p>South China University of Technology</p>
+            </div>
+        </section>
+        <hr>
+        <section id='skills'>
+            <h3>Skills</h3>
+            <div class="wrapper">
+                <p><strong>Programming Languages:</strong>
+                    JavaScript,
+                    TypeScript,
+                    Basic C++ ,
+                    Basic Java,
+                </p>
+
+                <p><strong>Frameworks:</strong>
+                    ReactJS,
+                    NextJS, 
+                    NodeJS,
+                    ExpressJS
+                </p>
+                <p><strong>Databases:</strong>
+                    MongoDB, 
+                    MySQL,
+                    Firebase
+                </p>
+            </div>
+        </section>
+        <hr>
+        <section id='contacts'>
+            <h3>Contacts</h3>
+            <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="mailto:salma8000@gmail.com">
+                        <img src="./assets/images/email.png" alt="">
+                        salma8000@gmail.com
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:00905456525389">
+                        <img src="./assets/images/phone-call.png" alt="">
+                        +90 545 652 5389
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/salma-almehdhar-942750197">
+                        <img src="./assets/images/linkedin.png" alt="">
+                        Salma Almehdhar
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/Salma-0">
+                        <img src="./assets/images/github-sign.png" alt="">
+                        Salma-0
+                    </a>
+                </li>
+            </ul>
+
+            </div>
+        </section>
+        
+        <script>
+            const cards = document.getElementsByClassName('card') 
+            const prevBtn = document.getElementById('prev')
+            const nextBtn = document.getElementById('next')
+            var visible = 0;
+
+            function show() {
+                console.log(visible)
+                for (let i = 0; i < cards.length; i++) {
+                    if (i !== visible) {
+                        if (!cards[i].classList.contains('d-none')){
+                            cards[i].classList.add('d-none')
+                        }
+                    }else{
+                        if(cards[i].classList.contains('d-none')){
+                            cards[i].classList.remove('d-none')
+                        }
+                    }
+
+                }
+            }
+              
+            show()
+            
+            prevBtn.addEventListener('click', function(ev){
+               if(visible > 0) {
+                   visible = visible - 1;
+               }else{
+                   visible = cards.length - 1;
+               }
+
+               show()
+            })
+
+            nextBtn.addEventListener('click', function(ev){
+               if(visible < cards.length -1) {
+                   visible = visible + 1;
+               }else{
+                   visible = 0;
+               }
+
+               show()
+            })
+        </script>
+        <footer>
+            @Made by Salma
+        </footer>
+    </body>
+</html>
